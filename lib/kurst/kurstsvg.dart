@@ -12,3 +12,4 @@ part "svg/core/SVGObjectBase.dart";
 part "svg/core/SVGDisplayObjectBase.dart";
 part "svg/display/SVGCanvas.dart";
 part "svg/display/SVGRectangle.dart";
+part "svg/display/SVGCircle.dart";
