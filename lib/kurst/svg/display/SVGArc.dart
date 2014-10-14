@@ -50,15 +50,15 @@ class SVGArc extends SVGPath
 			return point;
 		}
 
-		return new Point( centerX + (radius * cos( angleInRadians )) , centerY + (radius * sin( angleInRadians )) );
+		return new kurstgeom.Point( centerX + (radius * cos( angleInRadians )) , centerY + (radius * sin( angleInRadians )) );
 	}
 	/**
 	 *
 	 */
-	void _updateArc( num x , num y , num radius, num sAngle, num eAngle )
+	void _updateArc( num xp , num yp , num radius, num sAngle, num eAngle )
 	{
-		_polarToCartesian( x , y , radius , eAngle , _startPoint );
-		_polarToCartesian( x , y , radius , sAngle , _endPoint );
+		_polarToCartesian( xp , yp , radius , eAngle , _startPoint );
+		_polarToCartesian( xp , yp , radius , sAngle , _endPoint );
 
 		_arcSweep = eAngle - sAngle <= 180 ? 0 : 1;
 
@@ -94,6 +94,7 @@ class SVGArc extends SVGPath
 
 		draw();
 
+		// Note: Overriden as translate is handled
 		_element.setAttribute( "transform" , "rotate( $_rotation ,$_regx , $_regy )" );
 
 	}
