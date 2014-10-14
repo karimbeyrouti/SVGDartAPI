@@ -26,14 +26,16 @@ main() {
 	rect.strokewidth    = 2;
 	rect.fill( '#00ff00' );
 
-	rectb                = new SVGRectangle();
-	rectb.x              = 30;
-	rectb.y              = 30;
-	rectb.width          = 200;
-	rectb.height         = 200;
-	rectb.fillOpacity    = .5;
-	rectb.stroke         = '#ff0000';
-	rectb.strokewidth    = 2;
+	rectb               = new SVGRectangle();
+	rectb.x             = 30;
+	rectb.y             = 30;
+	rectb.width         = 200;
+	rectb.height        = 200;
+	rectb.fillOpacity   = .5;
+	rectb.stroke        = '#ff0000';
+	rectb.strokewidth   = 2;
+	rectb.rx            = 10;
+	rectb.ry            = 10;
 	rectb.fill( '#00ff00' );
 
 	rectb.element.onClick.listen( (event) => rectb.remove() );
