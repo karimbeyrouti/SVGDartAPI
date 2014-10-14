@@ -71,7 +71,6 @@ class SVGDisplayObjectBase extends SVGObjectBase
 				if ( n == this )
 				{
 					parentSVGObject.children.removeAt( c );
-					//console.log( 'remove' , c , this.parentSVGObject.children , this.parentSVGObject.children.length );
 				}
 			}
 
@@ -89,7 +88,7 @@ class SVGDisplayObjectBase extends SVGObjectBase
 	{
 		if ( parentSVGObject == null ) return false;
 
-		num l = parentSVGObject.children.length;
+		num l = children.length;
 		SVGObjectBase o;
 		for ( num c = 0 ; c < l ; c ++ )
 		{
