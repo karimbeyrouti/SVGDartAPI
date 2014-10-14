@@ -6,6 +6,7 @@ Element container;
 SVGCanvas scanvas;
 SVGRectangle rect;
 SVGRectangle rectb;
+SVGGroup rectGroup;
 SVGCircle circle;
 
 main() {
@@ -16,6 +17,9 @@ main() {
 	scanvas.id          = 66;
 	scanvas.width       = 800;
 	scanvas.height      = 600;
+
+	// Group
+	rectGroup           = new SVGGroup();
 
 	// Rectangle
 	rect                = new SVGRectangle();
@@ -50,8 +54,9 @@ main() {
 	circle.fill( '#0000ff');
 
 	// Add elements to canvas
-	scanvas.append( rect );
-	scanvas.append( rectb );
+	scanvas.append( rectGroup );
+	rectGroup.append( rect );
+	rectGroup.append( rectb );
 	scanvas.append( circle );
 
 }
