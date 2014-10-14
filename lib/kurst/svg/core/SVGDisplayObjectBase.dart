@@ -108,6 +108,17 @@ class SVGDisplayObjectBase extends SVGObjectBase
 	/**
 	 *
 	 */
+	set gradient ( SVGGradientBase grad )
+	{
+		if ( _element != null )
+		{
+			String gid = grad.id;
+			fill( 'url(#$gid)' );
+		}
+	}
+	/**
+	 *
+	 */
 	String get color
 	{
 		return _element.getAttribute( 'fill' );
