@@ -10,20 +10,23 @@ SVGGroup rectGroup;
 SVGCircle circle;
 SVGImage image;
 SVGPath tripath ;
+SVGPolygon poly;
 
 main() {
 
+	// HTML Div container
 	container           = querySelector( '#mainDiv');
 
+	// SVG Canvas
 	scanvas             = new SVGCanvas( container );
 	scanvas.id          = 66;
 	scanvas.width       = 800;
 	scanvas.height      = 600;
 
-	// Group
+	// SVG Group
 	rectGroup           = new SVGGroup();
 
-	// Rectangle
+	// SVG Rectangle
 	rect                = new SVGRectangle();
 	rect.x              = 10;
 	rect.y              = 10;
@@ -34,7 +37,7 @@ main() {
 	rect.strokewidth    = 2;
 	rect.fill( '#00ff00' );
 
-	// Rounded Rectangle
+	// SVG Rounded Rectangle
 	rectb               = new SVGRectangle();
 	rectb.x             = 30;
 	rectb.y             = 30;
@@ -48,14 +51,14 @@ main() {
 	rectb.fill( '#00ff00' );
 	rectb.element.onClick.listen( (event) => rectb.remove() );
 
-	// Circle
+	// SVG Circle
 	circle              = new SVGCircle();
 	circle.r            = 20;
 	circle.x            = 100;
 	circle.y            = 100;
 	circle.fill( '#0000ff');
 
-	// Image
+	// SVG Image
 	image               = new SVGImage();
 	image.src           = 'assets/apps_icon.png';
 	image.x             = 300;
@@ -63,6 +66,7 @@ main() {
 	image.width         = 22;
 	image.height        = 23;
 
+	// SVG Path
 	tripath                = new SVGPath();
 	tripath.addDrawCommand( SVGPath.moveto , [75 , 0] );
 	tripath.addDrawCommand( SVGPath.lineto , [75 , 200] );
@@ -70,13 +74,22 @@ main() {
 	tripath.addDrawCommand( SVGPath.close );
 	tripath.fill( '#ff0000');
 
-	// Add elements to canvas
+	poly                = new SVGPolygon();
+	poly.x              = 100;
+	poly.y              = 100;
+	poly.addPoint( 5 , 30 );
+	poly.addPoint( 15 , 10 );
+	poly.addPoint( 25 , 30 );
+	poly.fill( '#00ff00' );
+	poly.stroke = '#000000';
 
+	// Add elements to canvas
 	scanvas.append( tripath );
 	scanvas.append( rectGroup );
 	rectGroup.append( rect );
 	rectGroup.append( rectb );
 	scanvas.append( circle );
 	scanvas.append( image );
+	scanvas.append( poly );
 
 }
