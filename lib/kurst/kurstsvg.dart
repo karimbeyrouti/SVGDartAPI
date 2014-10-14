@@ -21,3 +21,7 @@ part "svg/display/SVGPath.dart";
 part "svg/display/SVGPolygon.dart";
 part "svg/display/SVGText.dart";
 part "svg/display/SVGArc.dart";
+part "svg/core/SVGGradientBase.dart";
+part "svg/gradients/SVGGradientStop.dart";
+part "svg/gradients/SVGGradientSpreadMethod.dart";
+part "svg/gradients/SVGLinearGradient.dart";
