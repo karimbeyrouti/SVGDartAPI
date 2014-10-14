@@ -15,3 +15,6 @@ part "svg/display/SVGRectangle.dart";
 part "svg/display/SVGCircle.dart";
 part "svg/display/SVGGroup.dart";
 part "svg/display/SVGImage.dart";
+part "svg/data/SVGPathCommandDef.dart";
+part "svg/data/SVGPathCommand.dart";
+part "svg/display/SVGPath.dart";

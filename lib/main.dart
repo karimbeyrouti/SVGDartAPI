@@ -9,6 +9,8 @@ SVGRectangle rectb;
 SVGGroup rectGroup;
 SVGCircle circle;
 SVGImage image;
+SVGPath tripath ;
+
 main() {
 
 	container           = querySelector( '#mainDiv');
@@ -61,7 +63,16 @@ main() {
 	image.width         = 22;
 	image.height        = 23;
 
+	tripath                = new SVGPath();
+	tripath.addDrawCommand( SVGPath.moveto , [75 , 0] );
+	tripath.addDrawCommand( SVGPath.lineto , [75 , 200] );
+	tripath.addDrawCommand( SVGPath.lineto , [255 , 200] );
+	tripath.addDrawCommand( SVGPath.close );
+	tripath.fill( '#ff0000');
+
 	// Add elements to canvas
+
+	scanvas.append( tripath );
 	scanvas.append( rectGroup );
 	rectGroup.append( rect );
 	rectGroup.append( rectb );
