@@ -62,7 +62,7 @@ class SVGCanvas extends SVGDisplayObjectBase
 	}
 	set alpha ( num val )
 	{
-		svg.setAttribute( 'fill-opacity' , val );
+		svg.setAttribute( 'fill-opacity' , val.toString() );
 	}
 	/**
 	 *
