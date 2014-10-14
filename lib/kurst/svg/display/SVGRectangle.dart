@@ -40,7 +40,7 @@ class SVGRectangle extends SVGDisplayObjectBase
 	 */
 	num get ry
 	{
-		num.parse( _element.getAttribute( 'ry' ) );
+		return num.parse( _element.getAttribute( 'ry' ) );
 	}
 	set ry ( num val )
 	{
@@ -51,7 +51,7 @@ class SVGRectangle extends SVGDisplayObjectBase
 	 */
 	num get rx
 	{
-		num.parse( _element.getAttribute( 'rx' ) );
+		return num.parse( _element.getAttribute( 'rx' ) );
 	}
 	set rx ( num val )
 	{
