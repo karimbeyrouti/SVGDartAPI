@@ -114,7 +114,7 @@ class SVGDisplayObjectBase extends SVGObjectBase
 	}
 	void set color( String v )
 	{
-		this.fill( val );
+		_element.setAttribute( 'fill' , v );
 	}
 	/**
 	 *
