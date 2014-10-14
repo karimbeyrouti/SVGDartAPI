@@ -13,3 +13,4 @@ part "svg/core/SVGDisplayObjectBase.dart";
 part "svg/display/SVGCanvas.dart";
 part "svg/display/SVGRectangle.dart";
 part "svg/display/SVGCircle.dart";
+part "svg/display/SVGGroup.dart";
