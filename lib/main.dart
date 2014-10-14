@@ -11,6 +11,7 @@ SVGCircle circle;
 SVGImage image;
 SVGPath tripath ;
 SVGPolygon poly;
+SVGText txt;
 
 main() {
 
@@ -74,6 +75,7 @@ main() {
 	tripath.addDrawCommand( SVGPath.close );
 	tripath.fill( '#ff0000');
 
+	// SVG Polygon
 	poly                = new SVGPolygon();
 	poly.x              = 100;
 	poly.y              = 100;
@@ -83,6 +85,14 @@ main() {
 	poly.fill( '#00ff00' );
 	poly.stroke = '#000000';
 
+	// SVG Text
+	txt                 = new SVGText();
+	txt.y               = 300;
+	txt.text            = 'Hello SVG';
+	txt.font            = 'Arial';
+	txt.color           = '#000000';
+
+
 	// Add elements to canvas
 	scanvas.append( tripath );
 	scanvas.append( rectGroup );
@@ -91,5 +101,6 @@ main() {
 	scanvas.append( circle );
 	scanvas.append( image );
 	scanvas.append( poly );
+	scanvas.append( txt );
 
 }
