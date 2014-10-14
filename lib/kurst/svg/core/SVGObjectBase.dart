@@ -17,7 +17,7 @@ class SVGObjectBase
 	/**
 	 * @param elementName
 	 */
-	void initElement ( string elementName  )
+	void initElement ( String elementName  )
 	{
 		_element = this.createSVGElement( elementName );
 	}
@@ -25,7 +25,7 @@ class SVGObjectBase
 	 * @param elementName
 	 * @returns {Selection}
 	 */
-	SVGElement createSVGElement ( string elementName  ) // protected
+	Element createSVGElement ( String elementName  )
 	{
 		return document.createElementNS( 'http://www.w3.org/2000/svg' , elementName );
 	}
@@ -37,6 +37,7 @@ class SVGObjectBase
 	void set id( String v )
 	{
 		_id = v;
+		_element.setAttribute( 'id' , _id );
 	}
 
 	Element get element => _element;
