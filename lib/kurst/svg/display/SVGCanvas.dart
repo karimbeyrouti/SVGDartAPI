@@ -19,7 +19,7 @@ class SVGCanvas extends SVGDisplayObjectBase
 		defs    = createSVGElement( 'svg:defs' );
 
 		container.append( svg );
-		container.append( defs );
+		svg.append( defs );
 
 	}
 
