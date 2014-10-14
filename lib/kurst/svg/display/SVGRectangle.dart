@@ -13,7 +13,6 @@ class SVGRectangle extends SVGDisplayObjectBase
 	SVGRectangle()
 	{
 		initElement( 'rect');
-
 	}
 
 	//---------------------------------------------------------------------------------------------------------
@@ -45,7 +44,7 @@ class SVGRectangle extends SVGDisplayObjectBase
 	}
 	set ry ( num val )
 	{
-		_element.setAttribute( 'ry' , String( val ) );
+		_element.setAttribute( 'ry' , val.toString() );
 	}
 	/**
 	 *
@@ -56,7 +55,7 @@ class SVGRectangle extends SVGDisplayObjectBase
 	}
 	set rx ( num val )
 	{
-		_element.setAttribute( 'rx' , String( val ) );
+		_element.setAttribute( 'rx' , val.toString() );
 	}
 
 }
