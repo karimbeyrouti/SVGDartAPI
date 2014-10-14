@@ -1,6 +1,7 @@
 import 'kurst/kurstsvg.dart';
 
 import 'dart:html';
+import 'dart:math';
 
 Element container;
 SVGCanvas scanvas;
@@ -12,6 +13,7 @@ SVGImage image;
 SVGPath tripath ;
 SVGPolygon poly;
 SVGText txt;
+SVGArc arc;
 
 main() {
 
@@ -92,6 +94,16 @@ main() {
 	txt.font            = 'Arial';
 	txt.color           = '#000000';
 
+	// SVG ARC
+
+	arc                 = new SVGArc();
+	arc.radius          = 40;
+	arc.strokewidth     = 11;
+	arc.startAngle      = 0;
+	arc.endAngle        = 78;
+	arc.x               = 300;
+	arc.y               = 300;
+
 
 	// Add elements to canvas
 	scanvas.append( tripath );
@@ -102,5 +114,6 @@ main() {
 	scanvas.append( image );
 	scanvas.append( poly );
 	scanvas.append( txt );
+	scanvas.append( arc );
 
 }

@@ -20,3 +20,4 @@ part "svg/data/SVGPathCommand.dart";
 part "svg/display/SVGPath.dart";
 part "svg/display/SVGPolygon.dart";
 part "svg/display/SVGText.dart";
+part "svg/display/SVGArc.dart";
