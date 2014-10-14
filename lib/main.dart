@@ -8,7 +8,7 @@ SVGRectangle rect;
 SVGRectangle rectb;
 SVGGroup rectGroup;
 SVGCircle circle;
-
+SVGImage image;
 main() {
 
 	container           = querySelector( '#mainDiv');
@@ -53,10 +53,19 @@ main() {
 	circle.y            = 100;
 	circle.fill( '#0000ff');
 
+	// Image
+	image               = new SVGImage();
+	image.src           = 'assets/apps_icon.png';
+	image.x             = 300;
+	image.y             = 300;
+	image.width         = 22;
+	image.height        = 23;
+
 	// Add elements to canvas
 	scanvas.append( rectGroup );
 	rectGroup.append( rect );
 	rectGroup.append( rectb );
 	scanvas.append( circle );
+	scanvas.append( image );
 
 }
