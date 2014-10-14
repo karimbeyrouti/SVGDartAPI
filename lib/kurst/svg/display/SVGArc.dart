@@ -27,6 +27,8 @@ class SVGArc extends SVGPath
 
 	}
 
+	//---------------------------------------------------------------------------------------------------------
+
 	/**
 	 *
 	 * @param centerX
@@ -36,7 +38,7 @@ class SVGArc extends SVGPath
 	 * @param point
 	 * @returns {Point}
 	 */
-	kurstgeom.Point polarToCartesian ( num centerX , num centerY , num radius , num angleInDegrees , [  kurstgeom.Point point ] )
+	kurstgeom.Point _polarToCartesian ( num centerX , num centerY , num radius , num angleInDegrees , [  kurstgeom.Point point ] )
 	{
 		num angleInRadians = (angleInDegrees - 90) * PI / 180.0;
 
@@ -50,11 +52,13 @@ class SVGArc extends SVGPath
 
 		return new Point( centerX + (radius * cos( angleInRadians )) , centerY + (radius * sin( angleInRadians )) );
 	}
-
-	void updateArc( num x , num y , num radius, num sAngle, num eAngle )
+	/**
+	 *
+	 */
+	void _updateArc( num x , num y , num radius, num sAngle, num eAngle )
 	{
-		polarToCartesian( x , y , radius , eAngle , _startPoint );
-		polarToCartesian( x , y , radius , sAngle , _endPoint );
+		_polarToCartesian( x , y , radius , eAngle , _startPoint );
+		_polarToCartesian( x , y , radius , sAngle , _endPoint );
 
 		_arcSweep = eAngle - sAngle <= 180 ? 0 : 1;
 
@@ -69,13 +73,17 @@ class SVGArc extends SVGPath
 		commands[1].params[5] = _endPoint.x;
 		commands[1].params[6] = _endPoint.y;
 	}
-
+	/**
+	 *
+	 */
 	void draw()
 	{
-		updateArc( x , y , _radius , _startAngle , _endAngle );
+		_updateArc( x , y , _radius , _startAngle , _endAngle );
 		super.draw();
 	}
-
+	/**
+	 *
+	 */
 	void updateTransform()
 	{
 
@@ -89,6 +97,8 @@ class SVGArc extends SVGPath
 		_element.setAttribute( "transform" , "rotate( $_rotation ,$_regx , $_regy )" );
 
 	}
+
+	//---------------------------------------------------------------------------------------------------------
 
 	/**
 	 *
