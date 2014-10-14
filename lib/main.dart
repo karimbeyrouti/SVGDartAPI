@@ -14,6 +14,7 @@ SVGPath tripath ;
 SVGPolygon poly;
 SVGText txt;
 SVGArc arc;
+SVGLinearGradient grad;
 
 main() {
 
@@ -22,9 +23,20 @@ main() {
 
 	// SVG Canvas
 	scanvas             = new SVGCanvas( container );
-	scanvas.id          = 66;
+	scanvas.id          = 'svgCanvas';
 	scanvas.width       = 800;
 	scanvas.height      = 600;
+
+	// SVG Gradients
+	grad                = new SVGLinearGradient();
+	grad.id             = 'TestGrad';
+	grad.x1             = "0%";
+	grad.y1             = "50%";
+	grad.x2             = "100%";
+	grad.y2             = "50%";
+	grad.spreadMethod   = SVGGradientSpreadMethod.PAD;
+	grad.addStop( "0%" , "#00ff00" , .1 );
+	grad.addStop( "100%" , "#F0000" , 1 );
 
 	// SVG Group
 	rectGroup           = new SVGGroup();
@@ -35,10 +47,9 @@ main() {
 	rect.y              = 10;
 	rect.width          = 200;
 	rect.height         = 200;
-	rect.fillOpacity    = .5;
 	rect.stroke         = '#ff0000';
 	rect.strokewidth    = 2;
-	rect.fill( '#00ff00' );
+	rect.gradient       = grad;
 
 	// SVG Rounded Rectangle
 	rectb               = new SVGRectangle();
@@ -95,7 +106,6 @@ main() {
 	txt.color           = '#000000';
 
 	// SVG ARC
-
 	arc                 = new SVGArc();
 	arc.radius          = 40;
 	arc.strokewidth     = 11;
@@ -104,8 +114,8 @@ main() {
 	arc.x               = 300;
 	arc.y               = 300;
 
-
 	// Add elements to canvas
+	scanvas.appendDef( grad );
 	scanvas.append( tripath );
 	scanvas.append( rectGroup );
 	rectGroup.append( rect );
