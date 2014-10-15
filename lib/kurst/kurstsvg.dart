@@ -25,3 +25,6 @@ part "svg/core/SVGGradientBase.dart";
 part "svg/gradients/SVGGradientStop.dart";
 part "svg/gradients/SVGGradientSpreadMethod.dart";
 part "svg/gradients/SVGLinearGradient.dart";
+part "svg/core/SVGFilterBase.dart";
+part "svg/filters/SVGDropShadowFilter.dart";
+part "svg/filters/SVGBlurFilter.dart";

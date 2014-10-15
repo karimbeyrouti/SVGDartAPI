@@ -15,6 +15,8 @@ SVGPolygon poly;
 SVGText txt;
 SVGArc arc;
 SVGLinearGradient grad;
+SVGDropShadowFilter dFilter;
+SVGBlurFilter bFilter;
 
 main() {
 
@@ -38,6 +40,13 @@ main() {
 	grad.addStop( "0%" , "#00ff00" , .1 );
 	grad.addStop( "100%" , "#F0000" , 1 );
 
+	dFilter             = new SVGDropShadowFilter();
+	dFilter.id          = 'SVGDropShadowFilterTest';
+
+	bFilter             = new SVGBlurFilter();
+	bFilter.id          = 'SVGBlurFilterTest';
+
+
 	// SVG Group
 	rectGroup           = new SVGGroup();
 
@@ -50,6 +59,7 @@ main() {
 	rect.stroke         = '#ff0000';
 	rect.strokewidth    = 2;
 	rect.gradient       = grad;
+	rect.filter         = dFilter;
 
 	// SVG Rounded Rectangle
 	rectb               = new SVGRectangle();
@@ -104,6 +114,7 @@ main() {
 	txt.text            = 'Hello SVG';
 	txt.font            = 'Arial';
 	txt.color           = '#000000';
+	txt.filter          = bFilter;
 
 	// SVG ARC
 	arc                 = new SVGArc();
@@ -114,7 +125,10 @@ main() {
 	arc.x               = 300;
 	arc.y               = 300;
 
+
 	// Add elements to canvas
+	scanvas.appendDef( bFilter );
+	scanvas.appendDef( dFilter );
 	scanvas.appendDef( grad );
 	scanvas.append( tripath );
 	scanvas.append( rectGroup );

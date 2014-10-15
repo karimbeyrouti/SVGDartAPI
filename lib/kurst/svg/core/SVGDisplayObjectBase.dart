@@ -219,5 +219,16 @@ class SVGDisplayObjectBase extends SVGObjectBase
 	{
 		return _element.getBoundingClientRect().height;
 	}
+	/**
+	 *
+	 * @param filter
+	 */
+	void set filter ( SVGFilterBase filter )
+	{
+		String t = 'url(#${filter.id})';
+		print('filter $t');
+		_element.setAttribute( 'filter' , 'url(#${filter.id})' );
+	}
+
 
 }
