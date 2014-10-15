@@ -33,7 +33,6 @@ class SVGObjectBase
 	//---------------------------------------------------------------------------------------------------------
 
 	String get id => _id;
-
 	void set id( String v )
 	{
 		_id = v;
@@ -41,5 +40,8 @@ class SVGObjectBase
 	}
 
 	Element get element => _element;
-
+	void set element ( Element val )
+	{
+		_element = val;
+	}
 }
