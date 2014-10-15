@@ -46,12 +46,7 @@ class SVGLoader
 		for(int c = 0; c < length ; c++)
 		{
 			node = nodeList[ c ].clone( true );
-
-			print( '$c ${node.nodeName}' );
-
-			//*
 			addToElements = false;
-			//
 
 			switch ( node.nodeName )
 			{
