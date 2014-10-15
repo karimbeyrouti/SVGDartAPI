@@ -22,9 +22,6 @@ class SVGGroup extends SVGDisplayObjectBase
 	 */
 	void append ( SVGDisplayObjectBase obj )
 	{
-
-		print( children );
-
 		if ( ! isChild( obj ))
 		{
 			children.add( obj );

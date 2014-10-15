@@ -67,7 +67,6 @@ class SVGDisplayObjectBase extends SVGObjectBase
 			{
 				n = parentSVGObject.children[c];
 
-				print ( n );
 				if ( n == this )
 				{
 					parentSVGObject.children.removeAt( c );
@@ -225,8 +224,6 @@ class SVGDisplayObjectBase extends SVGObjectBase
 	 */
 	void set filter ( SVGFilterBase filter )
 	{
-		String t = 'url(#${filter.id})';
-		print('filter $t');
 		_element.setAttribute( 'filter' , 'url(#${filter.id})' );
 	}
 

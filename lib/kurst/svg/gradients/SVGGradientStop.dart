@@ -35,19 +35,16 @@ class SVGGradientStop extends SVGObjectBase
 	{
 		if ( offset != null )
 		{
-			print('setOffset $offset');
 			_element.setAttribute( 'offset' , offset );
 		}
 
 		if ( color != null )
 		{
-			print('setColor $color');
 			_element.setAttribute( 'stop-color' , color );
 		}
 
 		if ( opacity != null )
 		{
-			print('setOpacity $opacity');
 			_element.setAttribute( 'stop-opacity' , opacity.toString() );
 		}
 	}
