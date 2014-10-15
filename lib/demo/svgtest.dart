@@ -41,12 +41,13 @@ main() {
 	grad.addStop( "0%" , "#00ff00" , .1 );
 	grad.addStop( "100%" , "#F0000" , 1 );
 
+	// Drop Shadow Filter
 	dFilter             = new SVGDropShadowFilter();
 	dFilter.id          = 'SVGDropShadowFilterTest';
 
+	// Blug Filter
 	bFilter             = new SVGBlurFilter();
 	bFilter.id          = 'SVGBlurFilterTest';
-
 
 	// SVG Group
 	rectGroup           = new SVGGroup();
