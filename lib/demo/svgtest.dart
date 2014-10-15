@@ -1,4 +1,4 @@
-import 'kurst/kurstsvg.dart';
+import '../kurst/kurstsvg.dart';
 
 import 'dart:html';
 import 'dart:math';
