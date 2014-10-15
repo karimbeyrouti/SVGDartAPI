@@ -17,6 +17,7 @@ SVGArc arc;
 SVGLinearGradient grad;
 SVGDropShadowFilter dFilter;
 SVGBlurFilter bFilter;
+SVGLoader sloader;
 
 main() {
 
@@ -125,6 +126,10 @@ main() {
 	arc.x               = 300;
 	arc.y               = 300;
 
+	// SVG Loader
+	sloader             = new SVGLoader();
+	sloader.load( 'assets/ruby.svg' );
+	sloader.loadStream.listen( (String message) => svgLoadComplete(message) );
 
 	// Add elements to canvas
 	scanvas.appendDef( bFilter );
@@ -140,4 +145,10 @@ main() {
 	scanvas.append( txt );
 	scanvas.append( arc );
 
+}
+
+svgLoadComplete( String message )
+{
+	print('$message');
+	scanvas.append( sloader.element );
 }
