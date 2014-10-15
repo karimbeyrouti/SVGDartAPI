@@ -58,7 +58,7 @@ class SVGCanvas extends SVGDisplayObjectBase
 	 */
 	num get alpha
 	{
-		return  num.parse( this.svg.getAttribute( 'fill-opacity' ) );
+		return num.parse( this.svg.getAttribute( 'fill-opacity' ) );
 	}
 	set alpha ( num val )
 	{
