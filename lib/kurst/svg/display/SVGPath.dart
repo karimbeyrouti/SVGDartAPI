@@ -19,7 +19,6 @@ class SVGPath extends SVGDisplayObjectBase
 	//---------------------------------------------------------------------------------------------------------
 
 	List<SVGPathCommand> commands = new List<SVGPathCommand>();
-	bool relative = false;
 	bool drawOnCommand = true;
 
 	//---------------------------------------------------------------------------------------------------------
@@ -34,7 +33,7 @@ class SVGPath extends SVGDisplayObjectBase
 	/**
 	 *
 	 */
-	void addDrawCommand( SVGPathCommandDef command , [ List<num> parameters ] )
+	void addDrawCommand( SVGPathCommandDef command , [ List<num> parameters , bool relative = false] )
 	{
 		if ( parameters != null )
 		{
@@ -81,7 +80,7 @@ class SVGPath extends SVGDisplayObjectBase
 			{
 				cmd = commands[c];
 				code = cmd.code;
-				code = ( relative ) ? code.toLowerCase() : code.toUpperCase();
+				code = ( cmd.isRelative ) ? code.toLowerCase() : code.toUpperCase();
 				str += ( c == 0 ) ? code : ' ' + code;
 				cmdP = cmd.params;
 
