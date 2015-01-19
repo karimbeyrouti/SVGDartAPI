@@ -3,6 +3,10 @@ part of kurst.svg;
 class SVGLoader
 {
 
+    //---------------------------------------------------------------------------------------------------------
+
+    static const String onSVGLoaded 		= 'onSVGLoaded';
+
 	//---------------------------------------------------------------------------------------------------------
 
 	StreamController _loadStreamController = new StreamController.broadcast();
@@ -122,7 +126,7 @@ class SVGLoader
 		DomParser parser = new DomParser();
 		XmlDocument XMLDoc = parser.parseFromString( responseText  , "text/xml" );
 		parseSVGHtmlElement( XMLDoc.documentElement.childNodes );
-		_loadStreamController.add( 'onSVGLoaded');
+		_loadStreamController.add( SVGLoader.onSVGLoaded );
 	}
 
 	//---------------------------------------------------------------------------------------------------------

@@ -146,6 +146,7 @@ main() {
 	scanvas.append( txt );
 	scanvas.append( arc );
 
+  window.console.log( bFilter );
 }
 
 svgLoadComplete( String message )
