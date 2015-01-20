@@ -1,0 +1,1 @@
+dart2js lib\demo\svgdemo.dart -o lib\demo\svgdemo.dart.js
