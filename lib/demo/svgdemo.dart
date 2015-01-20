@@ -11,7 +11,7 @@ UserMediaManager userMediaManager;
 AudioContextManager audioContextManager ;
 List<SVGRectangle> rectangles  = new List<SVGRectangle>();
 
-Boolean rafEnabled = false;
+bool rafEnabled = false;
 int numBars = 256;
 num magnitude;
 
